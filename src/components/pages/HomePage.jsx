@@ -5,7 +5,7 @@ import { Routing } from '../../routes'
 export const HomePage = () => {
   return (
     <div> 
-    HEllo islam
+    HEllo!
     <Routing />
     </div>
   )
