@@ -48,7 +48,7 @@ export const Chat = () => {
           </form>
           <div className={cls.users}>
             {databaseUser.length > 0 ? (
-              databaseUser.map((user) => user.nickname !== userNickname.nickname ? (
+              databaseUser.map((user) => user.nickname !== userNickname.user ? (
                 <div
                   className={cls.user}
                   onClick={() => {
