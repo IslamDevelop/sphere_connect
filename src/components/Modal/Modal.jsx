@@ -18,7 +18,8 @@ export const Modal = () => {
   return (
     <div className="modal">
       <div className="modal-content">
-        {handleClose}
+       {handleClose}
+       
         <AddPost />
       </div>
     </div>

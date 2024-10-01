@@ -1,4 +1,6 @@
+
 import React, { useEffect, useState } from "react";
+
 import { Outlet } from "react-router-dom";
 import { Navbar } from "../components";
 import { auth } from "../firebase";

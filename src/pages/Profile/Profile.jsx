@@ -1,8 +1,9 @@
+
 import React, { useState } from "react";
 import { Button } from "../../components/Forms";
 import "./profile.scss";
 import { ModalProfile } from "./Modal-profile/ModalProfile";
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { CardPost } from "../../components/CardPost/CardPost";
 
 export const Profile = () => {
@@ -35,12 +36,11 @@ export const Profile = () => {
                   <strong>102</strong> following
                 </div>
               </div>
-              <Button
-                variant="profileBtn"
+              <Button variant="profileBtn"
                 className="edit-profile-btn"
                 onClick={toggleModal}
-              >
-                Edit Profile
+                >
+               Edit Profile
               </Button>
             </div>
             <div className="profile-bio">
@@ -53,7 +53,7 @@ export const Profile = () => {
               <div>
                 <p>
                   Давно выяснено, что при оценке дизайна и композиции читаемый
-                  текст мешает сосредоточиться. Lorem Ipsum используют
+                  текст мешает сосредоточиться. 
                 </p>
               </div>
             </div>
@@ -64,9 +64,10 @@ export const Profile = () => {
           {posts.map((post) => (
             <CardPost isProfile={true} post={post} />
           ))}
-        </div>
-        <ModalProfile isOpen={isOpen} toggleModal={toggleModal} />
+        </div>       
       </div>
+      {/* Модальное окно, передаем состояние и функцию управления */}
+      <ModalProfile isOpen={isOpen} toggleModal={toggleModal} />
     </div>
   );
 };

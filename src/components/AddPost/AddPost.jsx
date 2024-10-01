@@ -65,6 +65,7 @@ export const AddPost = () => {
     dispatch(closeModal());
   };
 
+ 
   const handleChangeFile = (e) => {
     const target = e.target;
     const selectedFile = target.files[0];

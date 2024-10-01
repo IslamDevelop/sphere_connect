@@ -3,7 +3,6 @@ import Template from "../pages/Template";
 import { Home } from "../pages/Home";
 import { Direct } from "../pages/Direct";
 import { Explore } from "../pages/Explore";
-
 import { Favorite } from "../pages/Favorites";
 import { Profile } from "../pages/Profile";
 import { SignUp } from "../pages/Redister/SignUp";
@@ -39,12 +38,12 @@ export const Routing = () => {
           element: <Profile />,
         },
         {
-           path: '/Login',
+          path: "/Login",
           element: <Login />,
         },
         {
-          path: '/Register',
-         element: <SignUp />,
+          path: "/Register",
+          element: <SignUp />,
         },
         {
           path: "*",
