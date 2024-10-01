@@ -3,7 +3,7 @@ import { getDatabase, ref, set, get } from "firebase/database";
 import { auth } from "../../firebase";
 
 export default async function writeUserData(newMessage,userName) {
-const myName = JSON.parse(localStorage.getItem('userNick'))
+const myName = JSON.parse(localStorage.getItem('user'))
   console.log(userName)
   const db = getDatabase();
   const messagesRef = ref(db, `messagesData/messages/${myName.nickname}${userName.user}`);

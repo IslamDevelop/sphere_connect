@@ -25,11 +25,11 @@ export const CardPost = ({ post, isProfile }) => {
             <div className="cardPost-lower-info">
               <div className="cardPost-lower-info-like">
                 <div>
-                  <img src={likeImg} alt="" /> <span>24</span>
+                  <img src={likeImg} alt="" /> <span>0</span>
                 </div>
 
                 <div>
-                  <img src={message} alt="" /> <span>24</span>
+                  <img src={message} alt="" /> <span>0</span>
                 </div>
               </div>
               <div className="cardPost-lower-info-favorites">
@@ -43,11 +43,8 @@ export const CardPost = ({ post, isProfile }) => {
               </p>
             </div>
             <div className="cardPost-lower-hashtag">
-              <span>#tamerlan,</span>
-              <span>#tamerlan,</span>
-              <span>#tamerlan,</span>
-              <span>#tamerlan,</span>
-              <span>#tamerlan,</span>
+              <span>#ramazoty</span>
+             
             </div>
             {/* <div className="cardPost-lower-comments">
               <li className="cardPost-lower-comments-comment">

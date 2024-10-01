@@ -4,24 +4,31 @@ import { CardPost } from "../../components/CardPost/CardPost";
 import { getDatabase, onValue, ref } from "firebase/database";
 
 export const Home = () => {
-  const postsFromStore = useSelector((state) => state.post.array); // Посты из Redux
-  const [posts, setPosts] = useState([]); // Локальное состояние для постов
+  const postsFromStore = useSelector((state) => state.post.array); // Posts from Redux
+  const [firebasePosts, setFirebasePosts] = useState([]); // Local state for Firebase posts
 
   useEffect(() => {
     const db = getDatabase();
     const postDataBase = ref(db, "post");
-  
-    onValue(postDataBase, (snapshot) => {
-      const firebasePosts = snapshot.val() || [];
-      setPosts([...postsFromStore, ...firebasePosts]); // Объединяем посты из Redux и Firebase
+
+    const unsubscribe = onValue(postDataBase, (snapshot) => {
+      const firebaseData = snapshot.val() || [];
+      setFirebasePosts(firebaseData);
     });
-  }, [postsFromStore]); 
+
+    return () => unsubscribe(); // Clean up listener when component unmounts
+  }, []);
+
+  // Merge posts from Firebase and Redux, avoiding duplicates by checking unique IDs
+  const combinedPosts = [...firebasePosts, ...postsFromStore.filter(postFromStore => {
+    return !firebasePosts.some(post => post.id === postFromStore.id);
+  })];
 
   return (
     <div className="container">
-      {posts.length > 0 ? (
-        posts.map((post,index) => (
-          <CardPost key={index} post={post} /> // Рендерим каждый пост
+      {combinedPosts.length > 0 ? (
+        combinedPosts.reverse().map((post, index) => (
+          <CardPost key={post.id || index} post={post} /> // Ensure unique keys
         ))
       ) : (
         <p>No posts yet</p>

@@ -9,7 +9,7 @@ import { CardPost } from "../../components/CardPost/CardPost";
 export const Profile = () => {
   const posts = useSelector((state) => state.post.array);
   const [isOpen, setIsOpen] = useState(false); // Состояние для модального окна
-
+const user = JSON.parse(localStorage.getItem('user'))
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
@@ -30,10 +30,10 @@ export const Profile = () => {
                   <strong>{posts.length}</strong> posts
                 </div>
                 <div className="stat">
-                  <strong>455</strong> followers
+                  <strong>0</strong> followers
                 </div>
                 <div className="stat">
-                  <strong>102</strong> following
+                  <strong>0</strong> following
                 </div>
               </div>
               <Button variant="profileBtn"
@@ -46,9 +46,9 @@ export const Profile = () => {
             <div className="profile-bio">
               <div>
                 <h3>
-                  <strong>User01</strong>
+                  <strong>{user.user}</strong>
                 </h3>
-                <a href="https://via.placeholder.com/150">@user</a>
+                <a href="https://via.placeholder.com/150">{user.user}</a>
               </div>
               <div>
                 <p>
