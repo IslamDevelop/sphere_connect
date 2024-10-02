@@ -93,6 +93,7 @@ export const AddPost = () => {
     if (selectedFile) {
       const newFileURL = URL.createObjectURL(selectedFile);
       setFile(selectedFile);
+      console.log(selectedFile)
       setFileURL(newFileURL);
       setError("");
     }

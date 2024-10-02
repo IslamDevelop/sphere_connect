@@ -48,7 +48,9 @@ export const Form = ({ title, handleClick }) => {
           handleClick(email, pass, nickname);
           setEmail("");
           setPass("");
+          
         }}
+        type={SubmitEvent}
       >
         <Link to="/Profile">{title}</Link>
       </Button>

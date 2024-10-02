@@ -9,6 +9,7 @@ import "./cardPost.scss";
 import { auth } from "../../firebase";
 
 export const CardPost = ({ post, isProfile }) => {
+  console.log(post.img)
   return (
     <>
       {isProfile ? (
@@ -18,7 +19,7 @@ export const CardPost = ({ post, isProfile }) => {
       ) : (
         <div className="cardPost">
           <div className="cardPost-img">
-            <img src={post.img} alt="" />
+            <video width='100%' height='100%' loop='loop' className="cardPost-img" src={post.img} alt="" autoPlay='autoplay' poster={post.img} />
           </div>
 
           <div className="cardPost-lower">

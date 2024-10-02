@@ -37,10 +37,7 @@ export const Routing = () => {
           path: "Profile",
           element: <Profile />,
         },
-        {
-          path: "/Login",
-          element: <Login />,
-        },
+     
         {
           path: "/Register",
           element: <SignUp />,
