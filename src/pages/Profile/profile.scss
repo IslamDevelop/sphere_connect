@@ -85,3 +85,15 @@
     height: auto;
     border-radius: 5px;
   }
+
+  @media (max-width: 430px) {
+    .profile-header {
+      flex-direction: column;
+    }
+    .profile-info-top {
+      flex-direction: column;
+    }
+    .profile-picture {
+      margin-right: 0;
+    }
+  }
