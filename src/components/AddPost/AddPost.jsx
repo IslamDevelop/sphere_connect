@@ -38,9 +38,9 @@ export const AddPost = () => {
     }
 
     setError("");
-    setIsUploading(true); // Start uploading
+    setIsUploading(true);
 
-    // Upload image to Firebase Storage
+
     try {
       const storageRef = ref(storage, `posts/${file.name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -48,7 +48,7 @@ export const AddPost = () => {
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          // Optional: can show upload progress here
+       
         },
         (error) => {
           setError("Ошибка при загрузке изображения. Пожалуйста, попробуйте снова.");
@@ -57,13 +57,13 @@ export const AddPost = () => {
         async () => {
           const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
           
-          // Once the file is uploaded, get the download URL and save it in the post
+         
           const item = {
             email: auth.currentUser.email,
             like: count,
-            img: downloadURL, // Firebase Storage URL
+            img: downloadURL, 
             text: text,
-            id: Date.now(), // Using Date.now() for a unique ID
+            id: Date.now(), 
           };
 
           dispatch(addPost(item));

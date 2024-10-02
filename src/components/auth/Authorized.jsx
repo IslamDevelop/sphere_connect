@@ -9,7 +9,7 @@ export const Authorized = () => {
   return (
     <div>
 
-   <Login/>
+
    <SignUp/>
     </div>
   )

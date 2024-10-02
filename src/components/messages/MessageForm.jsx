@@ -21,7 +21,7 @@ export const MessageForm = (userName) => {
   const dispatch = useDispatch();
   const add = () => dispatch(addMessage(mess));
   const remove = () => dispatch(removeMessage());
-  const myName = JSON.parse(localStorage.getItem("user"));
+  const myName = JSON.parse(localStorage.getItem("userNick"));
   const db = getDatabase();
   const databaseMessage = ref(
     db,

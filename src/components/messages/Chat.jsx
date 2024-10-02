@@ -11,7 +11,6 @@ export const Chat = () => {
   const [value, setValue] = useState("");
   const [send, setSend] = useState(false);
   const userNickname = JSON.parse(localStorage.getItem('user'))
-  // Получение списка пользователей из Firebase
   useEffect(() => {
     const db = getDatabase();
     const dbUser = ref(db, "Profile/users/");
@@ -30,10 +29,10 @@ export const Chat = () => {
     if (value !== nickname) {
     
       setValue(nickname);
-      setSend(!send); // Устанавливаем состояние отправки сообщения
+      setSend(!send);
     }
   };
-  // Обработка клика по пользователю и изменение состояния
+
 
   return (
     <div className="container">
@@ -48,7 +47,7 @@ export const Chat = () => {
           </form>
           <div className={cls.users}>
             {databaseUser.length > 0 ? (
-              databaseUser.map((user) => user.nickname !== userNickname.user ? (
+              databaseUser.map((user) => user.nickname !== userNickname.nickname ? (
                 <div
                   className={cls.user}
                   onClick={() => {

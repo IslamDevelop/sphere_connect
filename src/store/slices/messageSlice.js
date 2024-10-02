@@ -33,9 +33,7 @@ const messageSlice = createSlice({
           
                 state.message = action.payload;
                 state.date = Intl.DateTimeFormat("ru-Us", option).format()
-                
-                localStorage.setItem('user', JSON.stringify(state))
-                console.log(state.messages)
+            
             }
         ,
         removeMessage(state) {
