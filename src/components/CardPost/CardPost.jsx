@@ -19,7 +19,7 @@ export const CardPost = ({ post, isProfile }) => {
       ) : (
         <div className="cardPost">
           <div className="cardPost-img">
-            <video width='100%' height='100%' loop='loop' className="cardPost-img" src={post.img} alt="" autoPlay='autoplay' poster={post.img} />
+            <img className="cardPost-img" src={post.img} alt=""  poster={post.img} />
           </div>
 
           <div className="cardPost-lower">
